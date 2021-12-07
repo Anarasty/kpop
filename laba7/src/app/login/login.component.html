@@ -1,0 +1,140 @@
+
+<div class="center-content">
+
+  <mat-card class="example-card">
+    <mat-card-header>
+
+      <mat-card-title>MINAEVA REG</mat-card-title>
+    </mat-card-header>
+
+
+    <mat-card-content>
+      <mat-tab-group>
+
+        <form [formGroup]="registerForm">
+          <mat-tab label="Register">
+            <mat-form-field class="example-full-width" appearance="fill">
+
+              <mat-label>Name</mat-label>
+              <input formControlName="name" type="email" matInput placeholder="Name" value=""/>
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+
+            <small *ngIf="registerForm.get('name').invalid && registerForm.get('name').touched" class="text-danger">Name is
+              Required(Min length 3 for a Name)</small>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" type="email" matInput placeholder="Email" value=""/>
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+
+            <small *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched" class="text-danger">Email
+              is Required(Example email ABOBA@mail.com)</small>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+
+              <mat-label>Phone</mat-label>
+              <input formControlName="phone" type="email" matInput placeholder="Phone" value=""/>
+              <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+
+            <small *ngIf="registerForm.get('phone').invalid && registerForm.get('phone').touched" class="text-danger">
+              Phone is
+              Required(Example phone number +61 2 9999 9999)</small>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+
+              <mat-label>Address</mat-label>
+              <input formControlName="address" type="email" matInput placeholder="Address" value=""/>
+              <mat-icon matSuffix>home</mat-icon>
+            </mat-form-field>
+
+            <small *ngIf="registerForm.get('address').invalid && registerForm.get('address').touched" class="text-danger">Address is
+              Required(Max length 255 for a Address)</small>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" type="password" matInput placeholder="Password"/>
+              <mat-icon matSuffix>enhanced_encryption</mat-icon>
+            </mat-form-field>
+
+            <small *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched" class="text-danger">
+              Password is Required(Password must contains at least one capital letter, lower case letter and number)</small>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="confirm_password" type="password" matInput placeholder="Password"/>
+              <mat-icon matSuffix>enhanced_encryption</mat-icon>
+            </mat-form-field>
+
+            <small *ngIf="registerForm.get('confirm_password').invalid && registerForm.get('confirm_password').touched"
+                   class="text-danger">Password is Required</small>
+
+            <small *ngIf="(registerForm.get('confirm_password') == registerForm.get('confirm_password')) && registerForm.get('confirm_password').invalid && registerForm.get('confirm_password').touched"
+                   class="text-danger"> Password must match</small>
+
+            <button id="reg" [disabled]="registerForm.invalid" mat-button color="primary" (click)="registerUser()">Register</button>
+          </mat-tab>
+        </form>
+      </mat-tab-group>
+
+    </mat-card-content>
+
+
+    <mat-card-actions>
+
+    </mat-card-actions>
+
+  </mat-card>
+
+</div>
+
+
+<!--<div class="center-content">-->
+<!--  <mat-card class="example-card">-->
+<!--    <mat-card-header>-->
+<!--      <mat-card-title>Login/Register</mat-card-title>-->
+<!--      <mat-card-subtitle>Angular tutorial</mat-card-subtitle>-->
+<!--    </mat-card-header>-->
+<!--    <mat-card-content>-->
+<!--      <mat-tab-group>-->
+<!--        <mat-tab label="Login">-->
+<!--          <mat-form-field class="example-full-width">-->
+<!--            <mat-label>Email</mat-label>-->
+<!--            <input type="email" matInput placeholder="Email" value="" [(ngModel)]="email">-->
+<!--            <mat-icon matSuffix>email</mat-icon>-->
+<!--          </mat-form-field>-->
+
+<!--          <mat-form-field class="example-full-width">-->
+<!--            <mat-label>Password</mat-label>-->
+<!--            <input type="password" matInput placeholder="Password" [(ngModel)]="password">-->
+<!--            <mat-icon matSuffix>vpn_key</mat-icon>-->
+<!--          </mat-form-field>-->
+<!--          <button mat-button color="primary" (click)="login()">Login</button>-->
+<!--        </mat-tab>-->
+<!--        <mat-tab label="Register">-->
+<!--          <mat-form-field class="example-full-width">-->
+<!--            <mat-label>Email</mat-label>-->
+<!--            <input type="email" matInput placeholder="Email" value="" [(ngModel)]="remail">-->
+<!--            <mat-icon matSuffix>email</mat-icon>-->
+<!--          </mat-form-field>-->
+
+<!--          <mat-form-field class="example-full-width">-->
+<!--            <mat-label>Password</mat-label>-->
+<!--            <input type="password" matInput placeholder="Password" [(ngModel)]="rpassword">-->
+<!--            <mat-icon matSuffix>vpn_key</mat-icon>-->
+<!--          </mat-form-field>-->
+<!--          <mat-form-field class="example-full-width">-->
+<!--            <mat-label>Password</mat-label>-->
+<!--            <input type="password" matInput placeholder="Password" [(ngModel)]="rcpassword">-->
+<!--            <mat-icon matSuffix>vpn_key</mat-icon>-->
+<!--          </mat-form-field>-->
+<!--          <button mat-button color="primary" (click)="register()">Register</button>-->
+<!--        </mat-tab>-->
+<!--      </mat-tab-group>-->
+
+<!--    </mat-card-content>-->
+
+<!--  </mat-card>-->
+<!--</div>-->
