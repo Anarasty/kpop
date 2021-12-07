@@ -1,0 +1,12 @@
+<ion-list>
+  <div *ngFor="let entry of DBService.favorite" >
+    <ion-item *ngIf="entry.isChecked != false">
+      <ion-label>{{entry.name}}</ion-label>
+      <ion-checkbox (ionChange)="test(entry)" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+  </div>
+</ion-list>
+
+
+
+

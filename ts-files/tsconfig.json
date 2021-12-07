@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+      "outFile": "lab_2.js",
+    "removeComments": true,
+    "outDir": "js-files"
+  },
+  "exclude": [
+    "node_modules"
+  ],"files": ["main.ts"],
+  "compileOnSave": true
+}

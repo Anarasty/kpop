@@ -1,0 +1,37 @@
+<button (click) = "Search()">GetAPI</button>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <a routerLink="/favorite" routerLinkActive="active"> favorite </a>
+
+  </ion-toolbar>
+</ion-header>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Login</th>
+    <th>Password</th>
+    <th>Cell</th>
+  </tr>
+
+  <tr *ngFor="let item of user"  (click)="showAlert(item)"  >
+    <th>{{item.name}}</th>
+    <th>{{item.email}}</th>
+    <th>{{item.login}}</th>
+    <th>{{item.password}}</th>
+    <th>{{item.cell}}</th>
+    <ion-checkbox (ionChange)="test(item)" [(ngModel)]="item.isChecked"></ion-checkbox>
+
+    <!--    <button (click)="test(item)">Add to Favorite</button>-->
+  </tr>
+
+</table>
+
+
+<!--<h1>FAVORITE USERS</h1>-->
+<!--<div *ngIf="favorite[0] != null ">-->
+<!--  {{favorite | json}}-->
+
+<!--</div>-->
