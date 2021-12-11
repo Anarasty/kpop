@@ -1,0 +1,29 @@
+<button (click)="getUsersFromAPI()">GetAPI</button>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Login</th>
+    <th>Password</th>
+    <th>Cell</th>
+  </tr>
+<!-- динамическое внедрение данных -->
+  <tr *ngFor="let item of user" (click)="dialogUser.openDialogs(item)">
+    <th>{{item.name}}</th>
+    <th>{{item.email}}</th>
+    <th>{{item.login}}</th>
+    <th>{{item.password}}</th>
+    <th>{{item.cell}}</th>
+    <button (click)="addToFavorite(item)">Add to Favorite</button>
+  </tr>
+
+</table>
+
+
+<h1>FAVORITE USERS</h1>
+<div *ngIf="favorite[0] != null ">
+  {{favorite | json}}
+
+</div>
+
